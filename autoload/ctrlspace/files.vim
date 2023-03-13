@@ -337,7 +337,7 @@ function! ctrlspace#files#EditFile() abort
 
     let newFile = expand(newFile)
 
-    if isdirectory(newFile)
+    if isdirectory(newFile) && get(g:, 'CtrlSpaceOpenFolder') == 0
         call ctrlspace#window#Kill(0, 1)
         enew
         return
